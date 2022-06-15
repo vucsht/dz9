@@ -1,2 +1,13 @@
 ---
 # tasks file for prod
+- name: Ensure tomcat is present
+  apt:
+    name: tomcat9
+    state: present
+
+- name: Copy artefact to prod server
+  synchronize:
+     mode: push
+     src: /root/buildplace/target/hello-1.0.war
+     dest: /var/lib/tomcat9/webapps/
+  delegate_to: 178.154.197.116
