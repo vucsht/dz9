@@ -5,3 +5,10 @@
 
   roles:
     - build
+
+- name: prod server provisioning
+  hosts: prod
+  become: yes
+
+  roles:
+    - prod
