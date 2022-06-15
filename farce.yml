@@ -1,0 +1,7 @@
+---
+- name: build server provisioning
+  hosts: build
+  become: yes
+
+  roles:
+    - build
